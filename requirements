@@ -1,0 +1,58 @@
+#!pip install scikit-multilearn
+#!pip install tqdm
+#!pip install pymorphy2
+#!pip install transformers
+#!pip install transliterate
+
+#!pip install torch==1.13.1
+#!pip uninstall -y scipy gensim numpy tensorflow nltk
+#!pip install numpy==1.26.4 scipy==1.12.0 gensim==4.3.2 tensorflow==2.16.1 nltk==3.8.1
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import re
+import os
+from collections import Counter
+from sklearn.model_selection import train_test_split
+from skmultilearn.model_selection import IterativeStratification
+import nltk
+from nltk import bigrams
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import pymorphy2
+from nltk.stem.snowball import RussianStemmer
+from tqdm import tqdm
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import classification_report, f1_score
+from sklearn.multioutput import MultiOutputClassifier
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.utils.data import Dataset, DataLoader
+from torch.utils.tensorboard import SummaryWriter
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import FunctionTransformer
+import torch.optim as optim
+import gensim
+from gensim.models import Word2Vec
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, BatchNormalization
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, LearningRateScheduler, CSVLogger
+from tensorflow.keras.metrics import Precision, Recall
+import transformers
+from transformers import AutoModel, AutoTokenizer
+from transformers import BertTokenizer, TFBertForSequenceClassification, AutoModelForSequenceClassification
+from transformers import create_optimizer
+from torch.optim import AdamW
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.layers import Input, Embedding, Conv1D, GlobalMaxPooling1D, Concatenate, LSTM, Bidirectional
+from tensorflow.keras.models import Model
+from transliterate import translit
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+import inspect
+import collections
